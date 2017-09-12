@@ -5,7 +5,7 @@ var methodOverride = require('method-override');
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
-
+var PORT = process.env.PORT || 3000;
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
@@ -38,12 +38,12 @@ db.on("error", function(error) {
 });
 
 // Once logged in to the db through mongoose, log a success message
-db.once("openUri", function() {
+db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 
 // Listen on port 3000
-app.listen(3000, function() {
+app.listen(PORT, function() {
   console.log("App running on port 3000!");
 });
 
