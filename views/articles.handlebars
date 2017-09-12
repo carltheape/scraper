@@ -1,0 +1,64 @@
+<div class="panel-group col-xs-12 col-md-10 col-md-offset-1" id="accordion" role="tablist" aria-multiselectable="true">
+    {{#each articles}}
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading-{{ this._id }}">
+                <h4 class="panel-title text-center">
+                    <a href="{{ this.link }}" target="_blank">{{ this.title }}</a>
+                </h4>
+                <hr>
+                <p class="text-center"><button class="btn btn-primary" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{ this._id }}" aria-expanded="true" aria-controls="collapse-{{ this._id }}">
+                    Article Notes
+                </button></p>
+            </div>
+            <div id="collapse-{{ this._id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{ this._id }}">
+                <div class="panel-body">
+                    <h4 class="text-center">Your Notes</h4>
+                    <ul style="padding: 0;">
+                        {{#each this.notes}}
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-xs-10">
+                                        <p class="list-group-item-text">{{ this.text }}</p>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <button type="submit" form="hidden-form-{{ this.id }}" class="btn btn-danger btn-sm pull-right">Delete</button>
+                                        <form method="POST" action="/notes?_method=DELETE" id="hidden-form-{{ this.id }}" class="hidden-xs-up">
+                                            <input type="hidden" name="id" value="{{ this.id }}"></input>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                        {{/each}}
+                    </ul>
+                    <hr>
+                    <button type="button" class="btn btn-block btn-warning" data-toggle="modal" data-target="#note-modal-{{ this._id }}">
+                        Add a Note
+                    </button>
+                    <div class="modal" id="note-modal-{{ this._id }}">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Add Note</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/notes" class="form" method="POST">
+                                        <div class="form-group">
+                                            <textarea class="form-control" rows="4" name="text"></textarea>
+                                            <input type="hidden" name="title" value="{{ this.title }}"></input>
+                                            <hr>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                                Close
+                                            </button>
+                                            <button type="submit" class="btn btn-primary">Save Note</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>

@@ -1,0 +1,136 @@
+body {
+  background-image: url("../img/reddit.svg");
+  background-size: 30%;
+  font-family: 'IM Fell English', serif;
+}
+
+h1 {
+	font-size: 100px;
+}
+
+a, h1, h2, h3, h4, h5, h6 {
+	font-family: 'IM Fell English', serif;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: black;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    color: #69619B;
+    color: transparent;
+}
+
+.navbar-default .navbar-brand {
+    color: black;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #69619B;
+    background-color: transparent;
+}
+
+.jumbotron {
+	background-color: grey;
+	color:  #4551A5;
+	opacity: .98;
+}
+
+p, li {
+	color: black;
+}
+
+.panel-default>.panel-heading {
+    color: black;
+    background-color: #f5f5f5;
+    border-color: #dddddd;
+}
+
+.btn-success {
+    color: #ffffff;
+    background-color: #FE4C4C;
+    border-color: #FE4C4C;  
+}
+
+.btn-success:hover {
+    color: #ffffff;
+    background-color: #69619B;
+    border-color: #69619B;
+}
+
+.btn-success:focus {
+    color: #ffffff;
+    background-color: #69619B;
+    border-color: #69619B;
+}
+
+.btn.btn-block.btn-success:hover {
+	color: #ffffff;
+    background-color: #69619B;
+    border-color: #69619B;
+}
+
+.btn {
+    font-family: 'IM Fell English', serif;
+}
+
+.btn-info {
+    color: #ffffff;
+    background-color: #A199E9;
+    border-color: #A199E9;
+}
+
+.btn-info:hover {
+    color: #ffffff;
+    background-color: #4551A5;
+    border-color: #4551A5;
+}
+
+/*Saved Articles Page*/
+.btn-primary {
+    color: #ffffff;
+    background-color: #FE4C4C;
+    border-color: #FE4C4C;
+}
+
+.btn-primary:hover {
+    color: #ffffff;
+    background-color: #69619B;
+    border-color: #69619B;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+    color: #ffffff;
+    background-color: #69619B;
+    border-color: #69619B;
+}
+
+.btn-primary:active:focus {
+  color: #ffffff; 
+  background-color: #69619B; 
+  border-color: #69619B;
+}
+
+.btn-warning {
+    color: #ffffff;
+    background-color: grey;
+    border-color: grey;
+}
+
+.btn-warning:hover {
+    color: #ffffff;
+    background-color: #69619B;
+    border-color: #69619B;
+}
+
+.btn-warning:focus, .btn-warning.focus {
+    color: #ffffff;
+    background-color: #b3b3b3;
+    border-color: #b3b3b3;
+}
+
+.btn-warning:active:focus {
+  color: #ffffff; 
+  background-color: #69619B; 
+  border-color: #69619B;
+}
