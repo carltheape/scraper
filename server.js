@@ -25,7 +25,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride('_method'));
 
 // Database configuration with local mongoose db connection
-mongoose.connect("mongodb://localhost/NewsScraperMongoose");
+mongoose.connect("mongodb://localhost/NewsScraperMongoose" || "mongodb://heroku_mvxh365p:1orhmpkdvd3tg14bg1hjnvq3vo@ds163387.mlab.com:63387/heroku_mvxh365p");
 var db = mongoose.connection;
 
 // Setup handlebars
